@@ -1,17 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './styles/index.css';
+import './styles/app.css';
+import { Main} from './pages/Main.jsx';
+import { Header } from './containers/Header';
+import { Footer } from './containers/Footer';
+import { Whatsapp } from "./containers/Whatsapp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Header />
+  </React.StrictMode>,
+  document.getElementById('header')
+);
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Main />
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(
+  <React.StrictMode>
+    <Footer />
+  </React.StrictMode>,
+  document.getElementById('footer')
+);
+
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Whatsapp />
+  </React.StrictMode>,
+  document.getElementById('wpp')
+);

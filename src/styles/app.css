@@ -1,0 +1,105 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.header__background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/header-img.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+  color: white;
+}
+
+.line-header__title {
+  background-color: white;
+  opacity: 1;
+  height: 0.5rem;
+}
+.sentence-header__tech {
+  background-color: white;
+  margin: 15rem 1.5rem 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  padding: 0.2rem;
+  font-size: 1rem;
+  text-align: center;
+}
+blockquote {
+  position: relative;
+  text-align: center;
+  padding: 0 2rem;
+  width: 80%;
+  color: #484748;
+  margin: 1rem auto 1rem;
+  background-repeat: no-repeat;
+  background-size: 1.5rem 1.5rem;
+}
+blockquote.quote:before,
+blockquote.quote:after {
+  font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+  position: absolute;
+  color: #039be5;
+  font-size: 5rem;
+}
+
+blockquote:before {
+  content: '\201C';
+  top: -1.2rem;
+  margin-right: -0.5rem;
+  right: 100%;
+}
+blockquote:after {
+  content: '\201D';
+  margin-left: -2rem;
+  left: 100%;
+  top: auto;
+  bottom: -4rem;
+}
+.header-benefit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header-benefit__object {
+  margin-top: 2rem;
+}
+.header-benefit__object figure {
+  width: 6rem;
+  margin: 0 auto;
+}
+.header-benefit__description {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  justify-content: space-around;
+}
+.header-benefit__description h3 {
+  font-size: 2.2rem;
+  text-align: end;
+  justify-self: flex-start;
+}
+.header-benefit__description p {
+  font-size: 1.5rem;
+  justify-self: flex-end;
+}
+.header-benefit__description-line {
+  border-left: 0.2rem solid #bbbbbb;
+  height: 4.2rem;
+}
