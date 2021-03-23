@@ -25,21 +25,21 @@ const beneficiosArray = [
 export const Header = () => (
   <div className='header'>
     <div className='header__background mb-8'>
-      <h1 className='font-medium text-5xl bg-gray-400 -mt-1 pt-12'>
+      <h1 className='font-medium text-5xl bg-gray-400 -mt-1 pt-12 md:text-right md:pr-10'>
         SU HOGAR <br />
         <strong className='font-extrabold'>INTELIGENTE</strong>
       </h1>
-      <span className='line-header__title'></span>
-      <span className='sentence-header__tech'>
+      <span className='line-header__title md:ml-72'></span>
+      <span className='sentence-header__tech md:w-4/12'>
         <blockquote className='quote'>
           TECNOLOGÍA al alcance de tu mano
         </blockquote>
       </span>
     </div>
-    <div className="flex w-full flex-col md:flex-row justify-center">
+    <div className="flex w-screen flex-col justify-center md:flex-row md:flex-wrap lg:flex-row ">
       {beneficiosArray.map((benefit) => (
-        <div className='mx-auto w-full' key={benefit.title}>
-          <figure className='w-3/12 mx-auto h-3/6 lg:h-4/6'>
+        <div className='mx-auto w-10/12 md:w-5/12 lg:w-4/12 lg:-mt-10' key={benefit.title}>
+          <figure className='w-3/12 mx-auto h-3/6 lg:h-4/6 '>
             <img className='h-full' src={benefit.image} alt={benefit.title} />
           </figure>
           <div className='w-full flex mt-2 mb-4'>
@@ -52,6 +52,5 @@ export const Header = () => (
         </div>
       ))}
     </div>
-    <Body></Body>
   </div>
 );

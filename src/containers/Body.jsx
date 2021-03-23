@@ -1,8 +1,6 @@
 import React from 'react';
 import { ProductoCard } from '../components/ProductoCard';
 import { Producto } from '../components/Producto';
-import { HogarSeguro } from '../components/HogarSeguro';
-
 /** IMAGENES */
 import conector from '../images/conector.jpg';
 import cortinas from '../images/cortina.jpg';
@@ -79,66 +77,101 @@ export const Body = () => {
 
   return (
     <div className='w-screen'>
-      <div className='w-full flex items-end justify-center'>
-        <h2 className='text-3xl w-10/12 font-extrabold text-center'>
+      <article className='w-full flex items-end justify-center md:mb-10'>
+        <h2 className='text-3xl w-10/12 font-extrabold text-center lg:mt-12'>
           ENCUENTRA NUESTROS PRODUCTOS
         </h2>
         <figure className='w-1/12'>
-          <img className='w-full' src={flecha} alt='flecha-productos' />
+          <img
+            className='w-full md:w-4/12 -ml-10 lg:-ml-32'
+            src={flecha}
+            alt='flecha-productos'
+          />
         </figure>
-      </div>
-      <div className='flex justify-center flex-wrap'>
+      </article>
+      <article className='flex justify-center flex-wrap lg:justify-evenly w-full'>
         {nuestrosProductos.map((producto) => (
           <ProductoCard key={producto.titulo} {...producto} />
         ))}
-      </div>
-      <div className='bg-blue-500 ml-10 mr-2 z-10 relative'>
+      </article>
+      <div className='bg-blue-500 ml-10 mr-2 z-10 relative md:w-8/12 md:ml-4'>
         <h3 className='font-extrabold text-2xl text-white py-5 pl-4 pr-20'>
           ASISTENTES VIRTUALES <br /> PARA TU HOGAR
         </h3>
       </div>
-      <div className='-mt-10 z-0 relative'>
-        <figure>
-          <img src={parlante2} alt='parlante 1' />
+      <div className='-mt-10 z-0 relative md:flex md:flex-wrap md:items-baseline md:justify-between lg:items-baseline'>
+        <figure className='md:w-5/12 lg:w-4/12 lg:order-2'>
+          <img className='lg:object-fill' src={parlante2} alt='parlante 1' />
         </figure>
-        <figure>
-          <img src={parlante} alt='parlante 2' />
+        <figure className='md:w-7/12 lg:w-4/12 lg:order-3'>
+          <img className='lg:object-fill' src={parlante} alt='parlante 2' />
         </figure>
-        <figure>
-          <img src={parlante3} alt='parlante 3' />
-        </figure>
-        <div className='p-6 m-4 shadow-2xl rounded-xl'>
-          <h5 className='text-blue-600 text-2xl text-center mb-2 font-extrabold'>
-            PARLANTES INTELIGENTES
-          </h5>
-          <p className='text-sm text-justify'>
-            Los parlantes inteligentes presentan un diseño elegante y compacto
-            ofrece voces nítidas y bajos equilibrados, para un sonido completo
-            que puede disfrutar en cualquier parte del hogar. Pídele que te
-            cuente un chiste, reproduzca música, contestes preguntas, ponga las
-            noticias, configure alarmas y más
-          </p>
+          <figure className='md:mt-2 lg:w-4/12 lg:order-1'>
+            <img className='lg:object-fill md:object-cover lg:h-48'  src={parlante3} alt='parlante 3' />
+          </figure>
+          <div className='p-6 m-4 shadow-2xl rounded-xl lg:order-4 lg:py-10 lg:px-20'>
+            <h5 className='text-blue-600 text-2xl text-center mb-2 font-extrabold'>
+              PARLANTES INTELIGENTES
+            </h5>
+            <p className='text-sm text-justify'>
+              Los parlantes inteligentes presentan un diseño elegante y compacto
+              ofrece voces nítidas y bajos equilibrados, para un sonido completo
+              que puede disfrutar en cualquier parte del hogar. Pídele que te
+              cuente un chiste, reproduzca música, contestes preguntas, ponga
+              las noticias, configure alarmas y más
+            </p>
         </div>
       </div>
       <div>
         <h2 className='font-extrabold text-3xl text-center mt-4'>
           ALGUNOS PRODUCTOS
         </h2>
-        {algunosProductos.map((algunProducto) => (
-          <Producto key={algunProducto.titulo} {...algunProducto} />
-        ))}
+        <section className='mx-10 md:flex md:flex-wrap md:mx-auto md:justify-around md:items-baseline'>
+          {algunosProductos.map((algunProducto) => (
+            <Producto key={algunProducto.titulo} {...algunProducto} />
+          ))}
+        </section>
       </div>
-      <div className='flex justify-center flex-col'>
+      <section className='flex justify-center flex-col'>
         <h2 className='text-3xl w-full font-extrabold text-center text-blue-600 mt-4'>
-          <div className='flex justify-center flex-col '>
-            <span className='-ml-20'>HOGAR SEGURO</span>
-            <span className='-mr-20'>HOGAR SERENO</span>
+          <div className='flex justify-center flex-col md:flex-row '>
+            <span className='-ml-20 md:mx-2'>HOGAR SEGURO</span>
+            <span className='ml-20 md:mx-2'>HOGAR SERENO</span>
           </div>
         </h2>
-        {hogarSeguro.map((hogar) => (
-          <HogarSeguro key={hogar.titulo} {...hogar} />
-        ))}
-      </div>
+        <section>
+          <article className='my-4 md:flex md:w-full'>
+            <img
+              className='md:w-6/12'
+              src={hogarSeguro[0].imagen}
+              alt={hogarSeguro[0].titulo}
+            />
+            <div className='lg:mt-20'>
+              <h4 className='font-extrabold text-right mr-8 text-xl my-1'>
+                {hogarSeguro[0].titulo}
+              </h4>
+              <p className='text-justify mr-8 ml-8 text-base'>
+                {hogarSeguro[0].descripcion}
+              </p>
+            </div>
+          </article>
+          <article className='my-4 md:flex md:w-full md:mt-10'>
+            <img
+              className='md:w-6/12 md:order-2'
+              src={hogarSeguro[1].imagen}
+              alt={hogarSeguro[1].titulo}
+            />
+            <div className='md:order-1 lg:mt-20'>
+              <h4 className='font-extrabold text-left ml-8 text-xl my-1'>
+                {hogarSeguro[1].titulo}
+              </h4>
+              <p className='text-justify mr-8 ml-8 text-base'>
+                {hogarSeguro[1].descripcion}
+              </p>
+            </div>
+          </article>
+        </section>
+      </section>
     </div>
   );
 };
